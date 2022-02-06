@@ -47,4 +47,4 @@ See [LICENSE.rst](LICENSE.rst).
 
 See [AUTHORS](AUTHORS).
 
-2014-2019 - David Fischer
+2014-2022 - David Fischer
