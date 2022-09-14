@@ -4,7 +4,7 @@
       template:
         src: datadog.yaml.j2
         dest: /etc/datadog-agent/datadog.yaml
-        mode: 0644
+        mode: '644'
       notify: reload datadog-agent
 
     - name: Setup PostgreSQL Datadog users
@@ -22,7 +22,7 @@
     - name: Setup Datadog agent checks
       file:
         path: /etc/datadog-agent/conf.d/{{ item.key }}.d
-        mode: 0755
+        mode: '755'
         state: directory
       loop_control:
         label: '{{ item.key }}'
@@ -33,7 +33,7 @@
       copy:
         content: '{{ item.value|to_yaml }}'
         dest: /etc/datadog-agent/conf.d/{{ item.key }}.d/conf.yaml
-        mode: 0644
+        mode: '644'
       loop_control:
         label: '{{ item.key }}'
       notify: reload datadog-agent
